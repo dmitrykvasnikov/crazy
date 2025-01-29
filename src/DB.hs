@@ -8,7 +8,6 @@ import           Data.Text                        (Text, unpack)
 import           Database.PostgreSQL.Simple
 import           Database.PostgreSQL.Simple.Time  (UTCTimestamp)
 import           Database.PostgreSQL.Simple.Types
-import           Schema
 import           Settings
 
 type TableName = Text

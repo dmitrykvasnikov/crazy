@@ -6,10 +6,10 @@ import           Control.Monad
 import           Data.Text
 import           DB
 import           Router        (router)
-import           Schema
 import           Settings
 
 main :: IO ()
 main = do
   conn <- getConnection
-  router conn
+  sts <- settings
+  router (port sts) conn
