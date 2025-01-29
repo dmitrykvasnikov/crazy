@@ -58,7 +58,10 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  MyLib
+    exposed-modules:  Router
+                    , Settings
+                    , DB
+                    , Schema
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -68,6 +71,15 @@ library
 
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.20.0.0
+                    , scotty
+                    , text
+                    , postgresql-simple
+                    , regex-applicative
+                    , directory
+                    , filepath
+                    , beam-core
+                    , beam-postgres
+                    , time
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -91,6 +103,7 @@ executable drcrazy
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.20.0.0,
+        text,
         drcrazy
 
     -- Directories containing source files.

@@ -1,8 +1,15 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
-import qualified MyLib (someFunc)
+import           Control.Monad
+import           Data.Text
+import           DB
+import           Router        (router)
+import           Schema
+import           Settings
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  conn <- getConnection
+  router conn
